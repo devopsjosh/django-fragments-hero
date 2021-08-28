@@ -9,9 +9,9 @@ import datetime
 class Hero(models.Model):
     name = models.CharField(_("name"), max_length=255)
     background_image = models.ImageField(_("background image"),
-                                         upload_to="/hero/backgrounds/", blank=True, null=True)
+                                         upload_to="hero/backgrounds/", blank=True, null=True)
     foreground_image = models.ImageField(_("foreground image"),
-                                         upload_to="/hero/foregrounds/", blank=True, null=True)
+                                         upload_to="hero/foregrounds/", blank=True, null=True)
     text = models.CharField(_("text"), max_length=255, blank=True, null=True)
     position = models.PositiveIntegerField(
         _("position"), default=0, help_text=_("The order in which to display the hero."))
@@ -43,6 +43,7 @@ class Hero(models.Model):
     def __str__(self):
         return self.name
 
+
 class HeroCallToAction(models.Model):
     ANCHOR, BUTTON = 0, 1
     ACTION_TYPES = ((ANCHOR, "Anchor"), (BUTTON, "Button"))
@@ -57,7 +58,7 @@ class HeroCallToAction(models.Model):
     action_type = models.PositiveIntegerField(
         _("action type"), choices=ACTION_TYPES, default=0)
     title = models.CharField(_("title"), max_length=50)
-    link = models.CharField(_("link"), blank=True, null=True)
+    link = models.CharField(_("link"), blank=True, null=True, max_length=255)
     target = models.PositiveBigIntegerField(
         _("target"), choices=TARGETS, default=0)
 
