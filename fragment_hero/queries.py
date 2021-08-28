@@ -1,7 +1,6 @@
 import graphene
 from graphene_django.filter import DjangoFilterConnectionField
 
-from .types import CategoryHierarchyNode, CategoryNode
 from fragment_hero.types import HeroCallToActionNode, HeroNode
 
 

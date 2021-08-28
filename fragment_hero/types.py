@@ -1,7 +1,6 @@
 from graphene_django import DjangoObjectType
 from graphene import relay
 
-from .models import Category, Hierarchy
 from fragment_hero.models import Hero, HeroCallToAction
 
 
