@@ -15,10 +15,11 @@ class Hero(models.Model):
     text = models.CharField(_("text"), max_length=255, blank=True, null=True)
     position = models.PositiveIntegerField(
         _("position"), default=0, help_text=_("The order in which to display the hero."))
-    start = models.DateTimeField(_("start"), db_index=True)
+    start = models.DateTimeField(_("start"), blank=True, null=True)
     end = models.DateTimeField(
         _("end"),
-        db_index=True,
+        blank=True,
+        null=True,
         help_text=_("The end time must be later than the start time."),
     )
 
