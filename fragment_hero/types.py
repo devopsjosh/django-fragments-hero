@@ -20,10 +20,14 @@ class HeroNode(DjangoObjectType):
         return self.is_active
 
     def resolve_background_image(self, info):
-        return info.context.build_absolute_uri(self.background_image.url)
+        if self.background_image:
+            return info.context.build_absolute_uri(self.background_image.url)
+        return None
 
     def resolve_foreground_image(self, info):
-        return info.context.build_absolute_uri(self.foreground_image.url)
+        if self.foreground_image:
+            return info.context.build_absolute_uri(self.foreground_image.url)
+        return None
 
 
 class HeroCallToActionNode(DjangoObjectType):
