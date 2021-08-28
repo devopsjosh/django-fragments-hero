@@ -7,7 +7,7 @@ class HeroAdmin(admin.ModelAdmin):
     list_display = [
         '__str__', 'name', 'start', 'end', 'is_active'
     ]
-    list_filter = ('start', 'end', 'is_active')
+    list_filter = ('start', 'end',)
 
 
 class HeroCallToActionAdmin(admin.ModelAdmin):
