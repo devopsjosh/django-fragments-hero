@@ -19,6 +19,12 @@ class HeroNode(DjangoObjectType):
     def resolve_is_active(self, info):
         return self.is_active
 
+    def resolve_background_image(self, info):
+        return info.context.build_absolute_uri(self.background_image.url)
+
+    def resolve_foreground_image(self, info):
+        return info.context.build_absolute_uri(self.foreground_image.url)
+
 
 class HeroCallToActionNode(DjangoObjectType):
     class Meta:
