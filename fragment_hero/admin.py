@@ -1,5 +1,4 @@
 from django.contrib import admin
-from .models import Category, Hierarchy
 from fragment_hero.models import Hero, HeroCallToAction
 
 
