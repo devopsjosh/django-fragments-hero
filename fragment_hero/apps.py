@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class HeroConfig(AppConfig):
-    name = 'Heroes'
+    name = 'fragment_hero'
